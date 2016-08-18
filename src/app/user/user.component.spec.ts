@@ -11,6 +11,6 @@ describe('Component: User', () => {
     let service : UserService;
     let component = new UserComponent(service);
     component.onSubmit();
-    expect(component.users.length).toBe(1);
+    expect(component.users[0].email).toBe("marco.mameli@gmail.com");
   });
 });

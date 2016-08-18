@@ -20,5 +20,6 @@ export class UserComponent {
     this.userService.getByEmail(this.email).subscribe(data => {
       this.users = data.message
     })
+    
   }
 }
