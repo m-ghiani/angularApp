@@ -66,6 +66,10 @@ describe('Service: Producer', () => {
   it('deleteProducer() method testing',
     inject([ProducerService],
       (service: ProducerService) => {
+        var producer = new Producer;
+        producer._id=1;
+        producer.name="scura";
+        producer.description="descrizione";
         service.deleteProducer(producer._id)
             .subscribe(data => {
                 console.log("Delete Producers " + data.error);
