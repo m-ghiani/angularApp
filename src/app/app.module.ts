@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { UserComponent } from './user/user.component';
 import { HTTP_PROVIDERS,HttpModule } from '@angular/http';
 import { ProductsComponent } from './products/products.component';
+import { ProducerComponent } from './producer/producer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
-    ProductsComponent
+    ProductsComponent,
+    ProducerComponent
   ],
   imports: [
     BrowserModule,
