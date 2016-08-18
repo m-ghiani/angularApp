@@ -6,7 +6,7 @@ import { HTTP_PROVIDERS } from '@angular/http';
 import { Product } from './product.model';
 import { Message } from './message.model';
 
-describe('Service: User', () => {
+describe('Service: Product', () => {
   beforeEach(() => {
     addProviders([ProductsService,HTTP_PROVIDERS]);
   });
