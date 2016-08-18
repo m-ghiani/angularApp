@@ -7,13 +7,15 @@ import { UserComponent } from './user/user.component';
 import { HTTP_PROVIDERS,HttpModule } from '@angular/http';
 import { ProductsComponent } from './products/products.component';
 import { ProducerComponent } from './producer/producer.component';
+import { MachineryComponent } from './machinery/machinery.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UserComponent,
     ProductsComponent,
-    ProducerComponent
+    ProducerComponent,
+    MachineryComponent
   ],
   imports: [
     BrowserModule,
