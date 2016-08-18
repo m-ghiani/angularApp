@@ -34,7 +34,7 @@ describe('Service: User', () => {
     inject([ProductsService],
       (service: ProductsService) => {
         var product = new Product;
-        product._id=58;
+        product._id=190;
         product.name="Sprite scura";
         product.price=0.99;
         product.description=" di descrizione";
@@ -57,7 +57,7 @@ describe('Service: User', () => {
     inject([ProductsService],
       (service: ProductsService) => {
         var product = new Product;
-        product._id=58;
+        product._id=190;
         product.name="Sprite sca";
         product.price=0.99;
         product.description="descrizione";
@@ -80,7 +80,7 @@ describe('Service: User', () => {
     inject([ProductsService],
       (service: ProductsService) => {
         var product = new Product;
-        product._id=58;
+        product._id=190;
         service.deleteProduct(product._id)
             .subscribe(data => {
                   expect(data.error).toBe(false);
