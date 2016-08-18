@@ -8,6 +8,7 @@ import { HTTP_PROVIDERS,HttpModule } from '@angular/http';
 import { ProductsComponent } from './products/products.component';
 import { ProducerComponent } from './producer/producer.component';
 import { MachineryComponent } from './machinery/machinery.component';
+import { FactoryComponent } from './factory/factory.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { MachineryComponent } from './machinery/machinery.component';
     UserComponent,
     ProductsComponent,
     ProducerComponent,
-    MachineryComponent
+    MachineryComponent,
+    FactoryComponent
   ],
   imports: [
     BrowserModule,

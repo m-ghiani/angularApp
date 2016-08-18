@@ -1,3 +1,4 @@
+export * from './factory';
 export * from './machinery';
 export * from './producer';
 export * from './products';
