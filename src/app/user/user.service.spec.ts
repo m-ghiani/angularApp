@@ -9,7 +9,7 @@ describe('Service: User', () => {
     addProviders([UserService,HTTP_PROVIDERS]);
   });
 
-  it('getAll() method testing',
+  /*it('getAll() method testing',
     inject([UserService],
       (service: UserService) => {
         service.getAll()
@@ -17,7 +17,7 @@ describe('Service: User', () => {
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
-      }));
+      }));*/
   it('getByEmail() method testing',
     inject([UserService],
       (service: UserService) => {

@@ -10,7 +10,7 @@ describe('Service: Producer', () => {
   });
 
   var producer = new Producer;
-  producer._id=59;
+  producer._id=65;
   producer.name="scura";
   producer.description="Stringa di descrizione";
 

@@ -14,7 +14,7 @@ export class UserService {
     // @method for receive all user in the remote db
     getAll() : Observable<Message>{
       // get request via http
-        let users = this.http.get(`${this.userURL}users`, {headers:this.getHeaders()})
+        let users = this.http.get(`${this.userURL}users/`, {headers:this.getHeaders()})
         .map((res:Response) => res.json());
         return users;
     }
