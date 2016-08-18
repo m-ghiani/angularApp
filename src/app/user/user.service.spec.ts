@@ -2,15 +2,22 @@
 
 import { addProviders, async, inject } from '@angular/core/testing';
 import { UserService } from './user.service';
+import { HTTP_PROVIDERS } from '@angular/http';
 
 describe('Service: User', () => {
   beforeEach(() => {
-    addProviders([UserService]);
+    addProviders([UserService,HTTP_PROVIDERS]);
   });
 
-  it('should ...',
+  it('getAll() method testing',
     inject([UserService],
       (service: UserService) => {
-        expect(service).toBeTruthy();
+        service.getAll()
+            .subscribe(data => {
+                  console.log(JSON.stringify(data));
+                  expect(data.error).toBe(false);
+            },
+            err => console.log(err));
+            console.log(this.users);
       }));
 });
