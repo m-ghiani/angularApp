@@ -62,7 +62,7 @@ describe('Service: Producer', () => {
       })
   );
 
-  it('deleteProducer() method testing',
+  /*it('deleteProducer() method testing',
     inject([ProducerService],
       (service: ProducerService) => {
         service.deleteProducer(producer._id)
@@ -72,6 +72,6 @@ describe('Service: Producer', () => {
             err => console.log(err));
             console.log(this.users);
       })
-  );
+  );*/
  
 });

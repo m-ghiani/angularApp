@@ -19,4 +19,14 @@ describe('Service: User', () => {
             err => console.log(err));
             console.log(this.users);
       }));
+  it('getByEmail() method testing',
+    inject([UserService],
+      (service: UserService) => {
+        service.getByEmail("marco.mameli@gmail.com")
+            .subscribe(data => {
+                  expect(data.error).toBe(false);
+            },
+            err => console.log(err));
+            console.log(this.users);
+      }));
 });
