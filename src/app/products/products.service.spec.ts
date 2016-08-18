@@ -15,9 +15,9 @@ describe('Service: Product', () => {
     inject([ProductsService],
       (service: ProductsService) => {
         service.getAll()
-            .subscribe(data => {
+            .subscribe((data:Message) => {
                 console.log(data.message);
-                  expect(data.error).toBe(false);
+                  expect(data.error).toBe(true);
             },
             err => console.log(err));
       }));
@@ -25,7 +25,8 @@ describe('Service: Product', () => {
     inject([ProductsService],
       (service: ProductsService) => {
         service.getById(1)
-            .subscribe(data => {
+            .subscribe((data:Message) => {
+              console.log(data.message);
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
