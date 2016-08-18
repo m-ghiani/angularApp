@@ -73,7 +73,7 @@ describe('Service: Product', () => {
         product.family=["normale"];
         service.putProduct(product._id,product)
             .subscribe(data => {
-                console.log("putProduct result"+data.error);
+                console.log("putProduct result "+data.error);
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
