@@ -23,10 +23,70 @@ describe('Service: User', () => {
   it('getById() method testing',
     inject([ProductsService],
       (service: ProductsService) => {
-        service.getById(1)
+        service.getById(55)
             .subscribe(data => {
-                  console.log(JSON.stringify(data));
-                  expect(data.message[0].id).toBe(1);
+                  expect(data.message[0]._id).toBe(55);
+                  expect(data.error).toBe(false);
+            },
+            err => console.log(err));
+            console.log(this.users);
+      })
+  );
+  it('putProduct() method testing',
+    inject([ProductsService],
+      (service: ProductsService) => {
+        var product = new Product;
+        product._id=56;
+        product.name="Sprite scura";
+        product.price=0.99;
+        product.description="Stringa di descrizione";
+        product.ingredients="Ingredienti del prodotto";
+        product.category="Categoria";
+        product.photo="ciao";
+        product.producer=1;
+        product.factory=1;
+        product.machines=[];
+        product.family=["normale"];
+        service.postProduct(product)
+            .subscribe(data => {
+                  expect(data.error).toBe(false);
+            },
+            err => console.log(err));
+            console.log(this.users);
+      })
+  );
+
+  it('putProduct() method testing',
+    inject([ProductsService],
+      (service: ProductsService) => {
+        var product = new Product;
+        product._id=55;
+        product.name="Sprite sca";
+        product.price=0.99;
+        product.description="descrizione";
+        product.ingredients="Ingredienti del prodotto";
+        product.category="Categoria";
+        product.photo="ciao";
+        product.producer=1;
+        product.factory=1;
+        product.machines=[];
+        product.family=["normale"];
+        service.putProduct(product._id,product)
+            .subscribe(data => {
+                  expect(data.error).toBe(false);
+            },
+            err => console.log(err));
+            console.log(this.users);
+      })
+  );
+
+  it('deleteProduct() method testing',
+    inject([ProductsService],
+      (service: ProductsService) => {
+        var product = new Product;
+        product._id=55;
+        service.deleteProduct(product._id)
+            .subscribe(data => {
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
