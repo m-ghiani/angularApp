@@ -8,15 +8,20 @@ import { UserService } from './user.service';
   styleUrls: ['user.component.css'],
   providers: [UserService],
 })
-export class UserComponent implements OnInit {
+export class UserComponent {
 
   users : User[];
   email : string;
+  password: string;
 
   constructor(private UserService : UserService) { }
-
-  ngOnInit() {
-    
+  
+  onSubmit(){
+    var user = new User();
+    user.email = this.email;
+    user.password = this.password;
+    this.users.push(user);
   }
+  
 
 }
