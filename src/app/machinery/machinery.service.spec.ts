@@ -35,10 +35,12 @@ describe('Service: Machinery', () => {
   it('postMachine() method testing',
     inject([MachineryService],
       (service: MachineryService) => {
-        var machin = new Machinery;
-        machin._id=15;
-        
-        service.postMachine(machin)
+        var machine = new Machinery;
+        machine._id=15;
+        machine.gps=null;
+        machine.id_prod=[3,4];
+        machine.type=["bevande calde"];
+        service.postMachine(machine)
             .subscribe(data => {
                 console.log("postMachine result " + data.error);
                   expect(data.error).toBe(false);
@@ -52,6 +54,9 @@ describe('Service: Machinery', () => {
       (service: MachineryService) => {
         var machine = new Machinery;
         machine._id=15;
+        machine.gps=null;
+        machine.id_prod=[3,4];
+        machine.type=["bevande fredde"];
         
         service.putMachine(machine._id,machine)
             .subscribe(data => {
@@ -65,9 +70,9 @@ describe('Service: Machinery', () => {
   it('deleteMachine() method testing',
     inject([MachineryService],
       (service: MachineryService) => {
-        var machin = new Machinery;
-        machin._id=343;
-        service.deleteMachine(machin._id)
+        var machine = new Machinery;
+        machine._id=15;
+        service.deleteMachine(machine._id)
             .subscribe(data => {
               // qui il problema non capisco perchè ritorni undfined
                 console.log("deleteMachine result:" + data.error)
