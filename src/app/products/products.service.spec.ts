@@ -16,6 +16,7 @@ describe('Service: Product', () => {
       (service: ProductsService) => {
         service.getAll()
             .subscribe(data => {
+                console.log(data.message);
                   expect(data.error).toBe(false);
             },
             err => console.log(err));

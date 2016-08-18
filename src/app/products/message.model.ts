@@ -1,6 +1,6 @@
 import { Product } from './product.model';
 
 export class Message{
-    error:string;
+    error:boolean;
     message:Product[];
 }
