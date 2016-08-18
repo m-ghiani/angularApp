@@ -57,5 +57,16 @@ describe('Service: Producer', () => {
             err => console.log(err));
       })
   );
+
+  /*it('deleteProducer() method testing',
+    inject([ProducerService],
+      (service: ProducerService) => {
+        service.deleteProducer(producer._id)
+            .subscribe(data => {
+                  expect(data.error).toBe(false);
+            },
+            err => console.log(err));
+      })
+  );*/
  
 });
