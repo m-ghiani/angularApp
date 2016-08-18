@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { User } from './user.model';
 import { UserService } from './user.service';
 
@@ -10,13 +10,17 @@ import { UserService } from './user.service';
 })
 export class UserComponent {
 
+  @Input() user : User;
   users : User[];
   email : string;
   password: string;
 
-  constructor(private userService : UserService) { }
+  constructor(private userService : UserService) { 
+    this.user = new User();
+  }
   
   onSubmit(){
+    console.log("Questa è la mail: "+ this.user.email);
     this.userService.getByEmail(this.email).subscribe(data => {
       this.users = data.message
       console.log(this.users.toString());

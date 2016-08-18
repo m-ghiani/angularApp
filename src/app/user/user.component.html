@@ -1,7 +1,7 @@
 <form (ngSubmit)="onSubmit()">
 <div class="input-group">
-  <input type="text" placeholder="insert mail" (ngModel)="model.email">
-  <input type="password" placeholder="insert passowrd" (ngModel)="model.password">
+  <input type="email" placeholder="insert mail" [(ngModel)]="user.email" name="email">
+  <input type="password" placeholder="insert passowrd" (ngModel)="user.password">
   <input type="submit" value="Submitting"/>
 </div>
 </form>
