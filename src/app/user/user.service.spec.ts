@@ -14,7 +14,6 @@ describe('Service: User', () => {
       (service: UserService) => {
         service.getAll()
             .subscribe(data => {
-                  console.log(JSON.stringify(data));
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
