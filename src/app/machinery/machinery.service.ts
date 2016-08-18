@@ -23,20 +23,20 @@ export class MachineryService {
     return machines;
   }
   // @method for adding one machine in the databse by id
-  postmachine(machine:Machinery) : Observable<Message>{
+  postMachine(machine:Machinery) : Observable<Message>{
     let machines = this.http.post(`${this.machineURL}machines`,JSON.parse(JSON.stringify(machine)),{headers:this.getHeaders()})
                     .map((received_machines:Response) => received_machines.json());
     return machines;
   }
   // @method for modify one machine in the databse by id
-  putmachine(id:number,machine:Machinery) : Observable<Message> {
+  putMachine(id:number,machine:Machinery) : Observable<Message> {
     let machines = this.http.put(`${this.machineURL}machines/${id}`,JSON.parse(JSON.stringify(machine)),{headers:this.getHeaders()})
                     .map((received_machines:Response) => received_machines.json());
     return machines;
   }
 
   // @method for deleting one machine from the database by id
-  deletemachine(id:number) : Observable<Message> {
+  deleteMachine(id:number) : Observable<Message> {
     let machines = this.http.delete(`${this.machineURL}machines/${id}`,{headers:this.getHeaders()})
                     .map((received_machines:Response) => received_machines.json());
     return machines;
