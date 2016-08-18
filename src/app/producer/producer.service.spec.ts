@@ -52,7 +52,7 @@ describe('Service: Producer', () => {
     inject([ProducerService],
       (service: ProducerService) => {
         var producer = new Producer;
-        producer._id=87;
+        producer._id=1;
         producer.name="scura";
         producer.description="descrizione";
         service.putProducer(producer._id,producer)
