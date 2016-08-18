@@ -29,11 +29,9 @@ describe('Service: Producer', () => {
       (service: ProducerService) => {
         service.getById(1)
             .subscribe(data => {
-                  expect(data.message[0]._id).toBe(1);
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
-            console.log(this.users);
       })
   );
   it('postProducer() method testing',
@@ -45,7 +43,6 @@ describe('Service: Producer', () => {
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
-            console.log(this.users);
       })
   );
 
@@ -58,20 +55,7 @@ describe('Service: Producer', () => {
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
-            console.log(this.users);
       })
   );
-
-  /*it('deleteProducer() method testing',
-    inject([ProducerService],
-      (service: ProducerService) => {
-        service.deleteProducer(producer._id)
-            .subscribe(data => {
-                  expect(data.error).toBe(false);
-            },
-            err => console.log(err));
-            console.log(this.users);
-      })
-  );*/
  
 });

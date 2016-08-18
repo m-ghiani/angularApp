@@ -1,6 +1,6 @@
 import { User } from './user.model';
 
 export class Message{
-    error:boolean;
+    error:string;
     message:User[];
 }

@@ -17,7 +17,6 @@ describe('Service: User', () => {
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
-            console.log(this.users);
       }));
   it('getByEmail() method testing',
     inject([UserService],
@@ -27,6 +26,5 @@ describe('Service: User', () => {
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
-            console.log(this.users);
       }));
 });

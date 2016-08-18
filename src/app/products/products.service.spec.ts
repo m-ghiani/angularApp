@@ -18,18 +18,15 @@ describe('Service: User', () => {
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
-            console.log(this.users);
       }));
   it('getById() method testing',
     inject([ProductsService],
       (service: ProductsService) => {
         service.getById(1)
             .subscribe(data => {
-                  expect(data.message[0]._id).toBe(1);
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
-            console.log(this.users);
       })
   );
   it('postProduct() method testing',
@@ -52,7 +49,6 @@ describe('Service: User', () => {
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
-            console.log(this.users);
       })
   );
 
@@ -76,7 +72,6 @@ describe('Service: User', () => {
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
-            console.log(this.users);
       })
   );
 
@@ -90,7 +85,6 @@ describe('Service: User', () => {
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
-            console.log(this.users);
       })
   );
 });

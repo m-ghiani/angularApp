@@ -1,6 +1,6 @@
 import { Producer } from './producer.model';
 
 export class Message {
-    error:boolean;
+    error:string;
     message:Producer[];
 }
