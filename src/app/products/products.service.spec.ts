@@ -36,7 +36,7 @@ describe('Service: Product', () => {
     inject([ProductsService],
       (service: ProductsService) => {
         var product = new Product;
-        product._id=190;
+        product._id=15;
         product.name="Sprite scura";
         product.price=0.99;
         product.description=" di descrizione";
@@ -60,7 +60,7 @@ describe('Service: Product', () => {
     inject([ProductsService],
       (service: ProductsService) => {
         var product = new Product;
-        product._id=343;
+        product._id=15;
         product.name="Sprite sca";
         product.price=0.99;
         product.description="descrizione";
@@ -84,9 +84,10 @@ describe('Service: Product', () => {
     inject([ProductsService],
       (service: ProductsService) => {
         var product = new Product;
-        product._id=190;
+        product._id=343;
         service.deleteProduct(product._id)
             .subscribe(data => {
+              // qui il problema non capisco perchè ritorni undfined
                 console.log("deleteProduct result:" + data.error)
                   expect(data.error).toBe(false);
             },
