@@ -14,14 +14,11 @@ export class UserComponent {
   email : string;
   password: string;
 
-  constructor(private UserService : UserService) { }
+  constructor(private userService : UserService) { }
   
   onSubmit(){
-    var user = new User();
-    user.email = this.email;
-    user.password = this.password;
-    this.users.push(user);
+    this.userService.getByEmail(this.email).subscribe(data => {
+      this.users = data.message
+    })
   }
-  
-
 }
