@@ -60,7 +60,7 @@ describe('Service: Product', () => {
     inject([ProductsService],
       (service: ProductsService) => {
         var product = new Product;
-        product._id=15;
+        product._id=5;
         product.name="Sprite sca";
         product.price=0.99;
         product.description="descrizione";
@@ -84,7 +84,7 @@ describe('Service: Product', () => {
     inject([ProductsService],
       (service: ProductsService) => {
         var product = new Product;
-        product._id=343;
+        product._id=15;
         service.deleteProduct(product._id)
             .subscribe(data => {
               // qui il problema non capisco perchè ritorni undfined
