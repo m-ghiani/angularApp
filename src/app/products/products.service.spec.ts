@@ -60,7 +60,7 @@ describe('Service: Product', () => {
     inject([ProductsService],
       (service: ProductsService) => {
         var product = new Product;
-        product._id=190;
+        product._id=343;
         product.name="Sprite sca";
         product.price=0.99;
         product.description="descrizione";
