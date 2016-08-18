@@ -16,7 +16,7 @@ describe('Service: Product', () => {
       (service: ProductsService) => {
         service.getAll()
             .subscribe((data:Message) => {
-                console.log(data);
+                console.log(data.error);
                   expect(data.error).toBe(true);
             },
             err => console.log(err));
@@ -26,7 +26,7 @@ describe('Service: Product', () => {
       (service: ProductsService) => {
         service.getById(1)
             .subscribe((data:Message) => {
-              console.log(data);
+              console.log(data.error);
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
@@ -72,6 +72,7 @@ describe('Service: Product', () => {
         product.family=["normale"];
         service.putProduct(product._id,product)
             .subscribe(data => {
+                consolo.log(data.error);
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
