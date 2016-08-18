@@ -10,7 +10,7 @@ describe('Service: Producer', () => {
   });
 
   var producer = new Producer;
-  producer._id=56;
+  producer._id=59;
   producer.name="scura";
   producer.description="Stringa di descrizione";
 
@@ -65,7 +65,6 @@ describe('Service: Producer', () => {
   it('deleteProducer() method testing',
     inject([ProducerService],
       (service: ProducerService) => {
-        producer._id=56;
         service.deleteProducer(producer._id)
             .subscribe(data => {
                   expect(data.error).toBe(false);
