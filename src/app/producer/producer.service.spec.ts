@@ -9,10 +9,7 @@ describe('Service: Producer', () => {
     addProviders([ProducerService,HTTP_PROVIDERS]);
   });
 
-  var producer = new Producer;
-  producer._id=65;
-  producer.name="scura";
-  producer.description="Stringa di descrizione";
+  
 
   it('getAll() method testing',
     inject([ProducerService],
@@ -37,7 +34,10 @@ describe('Service: Producer', () => {
   it('postProducer() method testing',
     inject([ProducerService],
       (service: ProducerService) => {
-        
+        var producer = new Producer;
+        producer._id=87;
+        producer.name="scura";
+        producer.description="Stringa di descrizione";
         service.postProducer(producer)
             .subscribe(data => {
                   expect(data.error).toBe(false);
@@ -49,6 +49,9 @@ describe('Service: Producer', () => {
   it('putProducer() method testing',
     inject([ProducerService],
       (service: ProducerService) => {
+        var producer = new Producer;
+        producer._id=87;
+        producer.name="scura";
         producer.description="descrizione";
         service.putProducer(producer._id,producer)
             .subscribe(data => {
