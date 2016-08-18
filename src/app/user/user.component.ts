@@ -19,6 +19,7 @@ export class UserComponent {
   onSubmit(){
     this.userService.getByEmail(this.email).subscribe(data => {
       this.users = data.message
+      console.log(this.users.toString());
     })
     
   }
