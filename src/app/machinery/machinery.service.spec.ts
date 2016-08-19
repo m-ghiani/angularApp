@@ -41,7 +41,7 @@ describe('Service: Machinery', () => {
         machine.gps.coordinates=[39.969857,18.124120]
         machine.id_prod=[3,4];
         machine.type=["bevande fredde"];
-        machine.state="off"
+        machine.state="on"
         service.postMachine(machine)
             .subscribe(data => {
                 console.log("postMachine result " + data.error);
@@ -75,6 +75,11 @@ describe('Service: Machinery', () => {
       (service: MachineryService) => {
         var machine = new Machinery;
         machine._id=15;
+        machine.gps.type="Point";
+        machine.gps.coordinates=[39.969857,18.124120]
+        machine.id_prod=[3,4];
+        machine.type=["bevande fredde"];
+        machine.state="on"
         service.deleteMachine(machine._id)
             .subscribe(data => {
               // qui il problema non capisco perchè ritorni undfined

@@ -8,13 +8,13 @@ import 'rxjs/Rx'
 @Injectable()
 export class UserService {
   // URL of user REST api
-  private userURL : string = "http://seserver.noip.me:8080/rest/";
+  private userURL : string = "http://seserver.noip.me:8080/rest/users";
   // init service with necessary http provider
     constructor(private http : Http){}
     // @method for receive all user in the remote db
     getAll() : Observable<Message>{
       // get request via http
-        let users = this.http.get(`${this.userURL}users/`, {headers:this.getHeaders()})
+        let users = this.http.get(`${this.userURL}/`, {headers:this.getHeaders()})
         .map((res:Response) => res.json());
         return users;
     }
@@ -22,7 +22,7 @@ export class UserService {
     getByEmail(email:string) : Observable<Message> {
       // get request via http
         let user = this.http
-                        .get(`${this.userURL}users/${email}`,{headers:this.getHeaders()})
+                        .get(`${this.userURL}/${email}`,{headers:this.getHeaders()})
                         .map(res => res.json());
         return user;
     }

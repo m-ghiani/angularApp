@@ -7,37 +7,37 @@ import { Message } from './message.model';
 export class ProducerService {
 
   // URL where is the REST api for Producer 
-  private producerURL : string = "http://seserver.noip.me:8080/rest/";
+  private producerURL : string = "http://seserver.noip.me:8080/rest/producers";
   constructor(private http : Http) { }
 
   // @method for receiving all producers in the database
   getAll() : Observable<Message>{
-    let producers = this.http.get(`${this.producerURL}producers`,{headers:this.getHeaders()})
+    let producers = this.http.get(`${this.producerURL}`,{headers:this.getHeaders()})
                     .map((received_producers:Response) => received_producers.json());
     return producers;
   }
   // @method for receiving one producers in the database by id
   getById(id:number) : Observable<Message>{
-    let producers = this.http.get(`${this.producerURL}producers/${id}`,{headers:this.getHeaders()})
+    let producers = this.http.get(`${this.producerURL}/${id}`,{headers:this.getHeaders()})
                     .map((received_producers:Response) => received_producers.json());
     return producers;
   }
   // @method for adding one Producer in the databse by id
   postProducer(producer:Producer) : Observable<Message>{
-    let producers = this.http.post(`${this.producerURL}producers`,JSON.parse(JSON.stringify(producer)),{headers:this.getHeaders()})
+    let producers = this.http.post(`${this.producerURL}`,JSON.parse(JSON.stringify(producer)),{headers:this.getHeaders()})
                     .map((received_producers:Response) => received_producers.json());
     return producers;
   }
   // @method for modify one Producer in the databse by id
   putProducer(id:number,producer:Producer) : Observable<Message> {
-    let producers = this.http.put(`${this.producerURL}producers/${id}`,JSON.parse(JSON.stringify(producer)),{headers:this.getHeaders()})
+    let producers = this.http.put(`${this.producerURL}/${id}`,JSON.parse(JSON.stringify(producer)),{headers:this.getHeaders()})
                     .map((received_producers:Response) => received_producers.json());
     return producers;
   }
 
   // @method for deleting one Producer from the database by id
   deleteProducer(id:number) : Observable<Message> {
-    let producers = this.http.delete(`${this.producerURL}producers/${id}`,{headers:this.getHeaders()})
+    let producers = this.http.delete(`${this.producerURL}/${id}`,{headers:this.getHeaders()})
                     .map((received_producers:Response) => received_producers.json());
     return producers;
   }

@@ -10,9 +10,7 @@ describe('Service: Producer', () => {
   beforeEach(() => {
     addProviders([ProducerService,HTTP_PROVIDERS]);
   });
-
   
-
   it('getAll() method testing',
     inject([ProducerService],
       (service: ProducerService) => {
