@@ -1,6 +1,7 @@
+import { Coordinate } from './coordiante.model';
 export class Factory {
     _id:number;
     address : string;
-    gps:any;
+    gps:Coordinate;
     id_producer:number;
 }

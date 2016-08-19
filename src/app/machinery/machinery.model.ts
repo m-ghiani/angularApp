@@ -1,3 +1,5 @@
+import { Coordinate } from './coordinate.model';
+
 export class Machinery {
     _id:number;
     gps:any;
