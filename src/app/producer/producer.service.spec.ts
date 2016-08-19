@@ -16,6 +16,7 @@ describe('Service: Producer', () => {
       (service: ProducerService) => {
         service.getAll()
             .subscribe(data => {
+                  console.log("Service: Producer getAll() method testing result: " + data.error);
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
@@ -26,6 +27,7 @@ describe('Service: Producer', () => {
       (service: ProducerService) => {
         service.getById(1)
             .subscribe(data => {
+              console.log("Service: Producer getById() method testing result: " + data.error);
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
@@ -40,6 +42,7 @@ describe('Service: Producer', () => {
         producer.description="Stringa di descrizione";
         service.postProducer(producer)
             .subscribe(data => {
+              console.log("Service: Producer postProducer() method testing result: " + data.error);
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
@@ -55,6 +58,7 @@ describe('Service: Producer', () => {
         producer.description="descrizione";
         service.putProducer(producer._id,producer)
             .subscribe(data => {
+              console.log("Service: Producer putProducer() method testing result: " + data.error);
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
@@ -70,7 +74,7 @@ describe('Service: Producer', () => {
         producer.description="descrizione";
         service.deleteProducer(producer._id)
             .subscribe(data => {
-                console.log("Delete Producers " + data.error);
+                console.log("Service: Producer deleteProducer() method testing result: " + data.error);
                   expect(data.error).toBe(false);
             },
             err => console.log(err));

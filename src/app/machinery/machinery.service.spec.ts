@@ -16,7 +16,7 @@ describe('Service: Machinery', () => {
       (service: MachineryService) => {
         service.getAll()
             .subscribe((data:Message) => {
-                console.log("getAll result:"+data.error);
+                console.log("Service: Machinery getAll() method testing result:"+data.error);
                   expect(data.error).toBe(true);
             },
             err => console.log(err));
@@ -26,7 +26,7 @@ describe('Service: Machinery', () => {
       (service: MachineryService) => {
         service.getById(1)
             .subscribe((data:Message) => {
-              console.log("getbyid result: "+data.error);
+              console.log("Service: Machinery getById() method testing result: "+data.error);
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
@@ -44,7 +44,7 @@ describe('Service: Machinery', () => {
         machine.state="on"
         service.postMachine(machine)
             .subscribe(data => {
-                console.log("postMachine result " + data.error);
+                console.log("Service: Machinery postMachine() method testing result " + data.error);
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
@@ -63,7 +63,7 @@ describe('Service: Machinery', () => {
         machine.state="off"
         service.putMachine(machine._id,machine)
             .subscribe(data => {
-                console.log("putMachine result "+data.error);
+                console.log("Service: Machinery putMachine() method testing result "+data.error);
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
@@ -83,7 +83,7 @@ describe('Service: Machinery', () => {
         service.deleteMachine(machine._id)
             .subscribe(data => {
               // qui il problema non capisco perchè ritorni undfined
-                console.log("deleteMachine result:" + data.error)
+                console.log("Service: Machinery deleteMachine() method testing result:" + data.error)
                   expect(data.error).toBe(false);
             },
             err => console.log(err));

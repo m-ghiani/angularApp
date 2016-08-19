@@ -16,7 +16,7 @@ describe('Service: Product', () => {
       (service: ProductsService) => {
         service.getAll()
             .subscribe((data:Message) => {
-                console.log("getAll result:"+data.error);
+                console.log("Service: Product getAll() method testing result: " + data.error);
                   expect(data.error).toBe(true);
             },
             err => console.log(err));
@@ -26,7 +26,7 @@ describe('Service: Product', () => {
       (service: ProductsService) => {
         service.getById(1)
             .subscribe((data:Message) => {
-              console.log("getbyid result: "+data.error);
+                  console.log("Service: Product getById() method testing result: " + data.error);
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
@@ -48,7 +48,7 @@ describe('Service: Product', () => {
         product.family=["normale"];
         service.postProduct(product)
             .subscribe(data => {
-                console.log("postProduct result " + data.error);
+                console.log("Service: Product postProduct() method testing result: " + data.error);
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
@@ -71,7 +71,7 @@ describe('Service: Product', () => {
         product.family=["normale"];
         service.putProduct(product._id,product)
             .subscribe(data => {
-                console.log("putProduct result "+data.error);
+                console.log("Service: Product putProduct() method testing result: " + data.error);
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
@@ -86,8 +86,9 @@ describe('Service: Product', () => {
         service.deleteProduct(product._id)
             .subscribe(data => {
               // qui il problema non capisco perchè ritorni undfined
-                console.log("deleteProduct result:" + data.error)
+                console.log("Service: Product deleteProduct() method testing result: " + data.error);
                   expect(data.error).toBe(false);
+                  expect(data.error).toEqual(false);
             },
             err => console.log(err));
       })

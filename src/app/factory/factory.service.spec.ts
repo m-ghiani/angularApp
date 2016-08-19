@@ -16,7 +16,7 @@ describe('Service: Factory', () => {
       (service: FactoryService) => {
         service.getAll()
             .subscribe((data:Message) => {
-                console.log("getAll result:"+data.error);
+                console.log("Service: Factory getAll() method testing result:"+data.error);
                   expect(data.error).toBe(true);
             },
             err => console.log(err));
@@ -26,7 +26,7 @@ describe('Service: Factory', () => {
       (service: FactoryService) => {
         service.getById(1)
             .subscribe((data:Message) => {
-              
+                  console.log("Service: Factory getById() method testing result:"+data.error);
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
@@ -43,7 +43,7 @@ describe('Service: Factory', () => {
         factory.address="indirizzo";
         service.postFactory(factory)
             .subscribe(data => {
-                console.log("postFactory result " + data.error);
+                console.log("Service: Factory postFactory() method testing result: " + data.error);
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
@@ -61,7 +61,7 @@ describe('Service: Factory', () => {
         factory.address="address";
         service.putFactory(factory._id,factory)
             .subscribe(data => {
-                console.log("putFactory result "+data.error);
+                console.log("Service: Factory putFactory() method testing result "+data.error);
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
@@ -80,7 +80,7 @@ describe('Service: Factory', () => {
         service.deleteFactory(factory._id)
             .subscribe(data => {
               // qui il problema non capisco perchè ritorni undfined
-                console.log("deleteFactory result:" + data.error)
+                console.log("dService: Factory delteFactory() method testing result:" + data.error)
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
