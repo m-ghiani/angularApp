@@ -27,6 +27,8 @@ describe('Service: Factory', () => {
         service.getById(1)
             .subscribe((data:Message) => {
               console.log("getbyid result: "+data.error);
+                expect(data.message[0].gps.type).toBe("Point");
+                console.log("Controlliamo i dati del gps delle fabbriche: " + data.message[0].gps.type);
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
@@ -37,8 +39,9 @@ describe('Service: Factory', () => {
       (service: FactoryService) => {
         var factory = new Factory;
         factory._id=15;
-        factory.gps=null;
         factory.id_producer=3;
+        factory.gps.type="Point";
+        factory.gps.coordinates=[39.969857,18.124120]
         factory.address="indirizzo";
         service.postFactory(factory)
             .subscribe(data => {
@@ -56,8 +59,9 @@ describe('Service: Factory', () => {
         factory._id=15;
         factory.gps=null;
         factory.id_producer=3;
-        factory.address="non indirizzo";
-        
+        factory.gps.type="Point";
+        factory.gps.coordinates=[39.969857,18.124120]
+        factory.address="address";
         service.putFactory(factory._id,factory)
             .subscribe(data => {
                 console.log("putFactory result "+data.error);
@@ -70,10 +74,12 @@ describe('Service: Factory', () => {
   it('delteFactory() method testing',
     inject([FactoryService],
       (service: FactoryService) => {
-        var factory = new Factory;
+       var factory = new Factory;
         factory._id=15;
         factory.gps=null;
         factory.id_producer=3;
+        factory.gps.type="Point";
+        factory.gps.coordinates=[39.969857,18.124120]
         factory.address="indirizzo";
         service.deleteFactory(factory._id)
             .subscribe(data => {

@@ -7,37 +7,37 @@ import { Message } from './message.model';
 export class ProductsService {
 
   // URL where is the REST api for product 
-  private productURL : string = "http://seserver.noip.me:8080/rest/";
+  private productURL : string = "http://seserver.noip.me:8080/rest/products";
   constructor(private http : Http) { }
 
   // @method for receiving all products in the database
   getAll() : Observable<Message>{
-    let products = this.http.get(`${this.productURL}products`,{headers:this.getHeaders()})
+    let products = this.http.get(`${this.productURL}`,{headers:this.getHeaders()})
                     .map((received_products:Response) => received_products.json());
     return products;
   }
   // @method for receiving one products in the database by id
   getById(id:number) : Observable<Message>{
-    let products = this.http.get(`${this.productURL}products/${id}`,{headers:this.getHeaders()})
+    let products = this.http.get(`${this.productURL}/${id}`,{headers:this.getHeaders()})
                     .map((received_products:Response) => received_products.json());
     return products;
   }
   // @method for adding one product in the databse by id
   postProduct(product:Product) : Observable<Message>{
-    let products = this.http.post(`${this.productURL}products`,JSON.parse(JSON.stringify(product)),{headers:this.getHeaders()})
+    let products = this.http.post(`${this.productURL}`,JSON.parse(JSON.stringify(product)),{headers:this.getHeaders()})
                     .map((received_products:Response) => received_products.json());
     return products;
   }
   // @method for modify one product in the databse by id
   putProduct(id:number,product:Product) : Observable<Message> {
-    let products = this.http.put(`${this.productURL}products/${id}`,JSON.parse(JSON.stringify(product)),{headers:this.getHeaders()})
+    let products = this.http.put(`${this.productURL}/${id}`,JSON.parse(JSON.stringify(product)),{headers:this.getHeaders()})
                     .map((received_products:Response) => received_products.json());
     return products;
   }
 
   // @method for deleting one product from the database by id
   deleteProduct(id:number) : Observable<Message> {
-    let products = this.http.delete(`${this.productURL}products/${id}`,{headers:this.getHeaders()})
+    let products = this.http.delete(`${this.productURL}/${id}`,{headers:this.getHeaders()})
                     .map((received_products:Response) => received_products.json());
     return products;
   }
