@@ -26,9 +26,7 @@ describe('Service: Factory', () => {
       (service: FactoryService) => {
         service.getById(1)
             .subscribe((data:Message) => {
-              console.log("getbyid result: "+data.error);
-                expect(data.message[0].gps.type).toBe("Point");
-                console.log("Controlliamo i dati del gps delle fabbriche: " + data.message[0].gps.type);
+              
                   expect(data.error).toBe(false);
             },
             err => console.log(err));
