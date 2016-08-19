@@ -8,6 +8,5 @@ export class Product {
     photo:any;
     producer:number;
     factory:number;
-    machines:Array<number>;
     family:Array<string>;
 }

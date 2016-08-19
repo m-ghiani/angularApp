@@ -69,7 +69,6 @@ describe('Service: Product', () => {
         product.photo="ciao";
         product.producer=1;
         product.factory=1;
-        product.machines=[];
         product.family=["normale"];
         service.putProduct(product._id,product)
             .subscribe(data => {
