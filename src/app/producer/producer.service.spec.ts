@@ -11,7 +11,7 @@ describe('Service: Producer', () => {
     addProviders([ProducerService,HTTP_PROVIDERS]);
   });
   
-  it('getAll() method testing',
+  it('Service: Producer getAll() method testing',
     inject([ProducerService],
       (service: ProducerService) => {
         service.getAll()
@@ -21,7 +21,7 @@ describe('Service: Producer', () => {
             err => console.log(err));
             console.log(this.users);
       }));
-  it('getById() method testing',
+  it('Service: Producer getById() method testing',
     inject([ProducerService],
       (service: ProducerService) => {
         service.getById(1)
@@ -31,7 +31,7 @@ describe('Service: Producer', () => {
             err => console.log(err));
       })
   );
-  it('postProducer() method testing',
+  it('Service: Producer postProducer() method testing',
     inject([ProducerService],
       (service: ProducerService) => {
         var producer = new Producer;
@@ -46,7 +46,7 @@ describe('Service: Producer', () => {
       })
   );
 
-  it('putProducer() method testing',
+  it('Service: Producer putProducer() method testing',
     inject([ProducerService],
       (service: ProducerService) => {
         var producer = new Producer;
@@ -61,7 +61,7 @@ describe('Service: Producer', () => {
       })
   );
 
-  it('deleteProducer() method testing',
+  it('Service: Producer deleteProducer() method testing',
     inject([ProducerService],
       (service: ProducerService) => {
         var producer = new Producer;

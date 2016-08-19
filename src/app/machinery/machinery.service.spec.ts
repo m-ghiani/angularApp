@@ -11,7 +11,7 @@ describe('Service: Machinery', () => {
     addProviders([MachineryService,HTTP_PROVIDERS]);
   });
 
-  it('getAll() method testing',
+  it('Service: Machinery getAll() method testing',
     inject([MachineryService],
       (service: MachineryService) => {
         service.getAll()
@@ -21,7 +21,7 @@ describe('Service: Machinery', () => {
             },
             err => console.log(err));
       }));
-  it('getById() method testing',
+  it('Service: Machinery getById() method testing',
     inject([MachineryService],
       (service: MachineryService) => {
         service.getById(1)
@@ -32,7 +32,7 @@ describe('Service: Machinery', () => {
             err => console.log(err));
       })
   );
-  it('postMachine() method testing',
+  it('Service: Machinery postMachine() method testing',
     inject([MachineryService],
       (service: MachineryService) => {
         var machine = new Machinery;
@@ -51,7 +51,7 @@ describe('Service: Machinery', () => {
       })
   );
 
-  it('putMachine() method testing',
+  it('Service: Machinery putMachine() method testing',
     inject([MachineryService],
       (service: MachineryService) => {
         var machine = new Machinery;
@@ -70,7 +70,7 @@ describe('Service: Machinery', () => {
       })
   );
 
-  it('deleteMachine() method testing',
+  it('Service: Machinery deleteMachine() method testing',
     inject([MachineryService],
       (service: MachineryService) => {
         var machine = new Machinery;

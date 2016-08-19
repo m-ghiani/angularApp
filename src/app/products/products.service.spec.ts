@@ -11,7 +11,7 @@ describe('Service: Product', () => {
     addProviders([ProductsService,HTTP_PROVIDERS]);
   });
 
-  it('getAll() method testing',
+  it('Service: Product getAll() method testing',
     inject([ProductsService],
       (service: ProductsService) => {
         service.getAll()
@@ -21,7 +21,7 @@ describe('Service: Product', () => {
             },
             err => console.log(err));
       }));
-  it('getById() method testing',
+  it('Service: Product getById() method testing',
     inject([ProductsService],
       (service: ProductsService) => {
         service.getById(1)
@@ -32,7 +32,7 @@ describe('Service: Product', () => {
             err => console.log(err));
       })
   );
-  it('postProduct() method testing',
+  it('Service: Product postProduct() method testing',
     inject([ProductsService],
       (service: ProductsService) => {
         var product = new Product;
@@ -55,7 +55,7 @@ describe('Service: Product', () => {
       })
   );
 
-  it('putProduct() method testing',
+  it('Service: Product putProduct() method testing',
     inject([ProductsService],
       (service: ProductsService) => {
         var product = new Product;
@@ -78,7 +78,7 @@ describe('Service: Product', () => {
       })
   );
 
-  it('deleteProduct() method testing',
+  it('Service: Product deleteProduct() method testing',
     inject([ProductsService],
       (service: ProductsService) => {
         var product = new Product;

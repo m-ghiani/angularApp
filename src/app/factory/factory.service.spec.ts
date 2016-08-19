@@ -11,7 +11,7 @@ describe('Service: Factory', () => {
     addProviders([FactoryService,HTTP_PROVIDERS]);
   });
 
-  it('getAll() method testing',
+  it('Service: Factory getAll() method testing',
     inject([FactoryService],
       (service: FactoryService) => {
         service.getAll()
@@ -21,7 +21,7 @@ describe('Service: Factory', () => {
             },
             err => console.log(err));
       }));
-  it('getById() method testing',
+  it('Service: Factory getById() method testing',
     inject([FactoryService],
       (service: FactoryService) => {
         service.getById(1)
@@ -32,7 +32,7 @@ describe('Service: Factory', () => {
             err => console.log(err));
       })
   );
-  it('postFactory() method testing',
+  it('Service: Factory postFactory() method testing',
     inject([FactoryService],
       (service: FactoryService) => {
         var factory = new Factory;
@@ -50,7 +50,7 @@ describe('Service: Factory', () => {
       })
   );
 
-  it('putFactory() method testing',
+  it('Service: Factory putFactory() method testing',
     inject([FactoryService],
       (service: FactoryService) => {
         var factory = new Factory;
@@ -68,7 +68,7 @@ describe('Service: Factory', () => {
       })
   );
 
-  it('delteFactory() method testing',
+  it('Service: Factory delteFactory() method testing',
     inject([FactoryService],
       (service: FactoryService) => {
        var factory = new Factory;
