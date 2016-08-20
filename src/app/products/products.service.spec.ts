@@ -338,13 +338,9 @@ describe('Service: Product', () => {
         var product = new Product;
         product._id=15;
         service.deleteProduct(product._id)
-            .subscribe(data => {                
-                  service.getById(product._id).subscribe(data => {
-                    expect(data).toEqual({
-  "error": false,
-  "message": []
-})
-                  })
+            .subscribe(data => {   
+                  expect(data).toEqual({ "error" : false, "message" :  null});             
+                  
             },
             err => console.log(err));
       })
