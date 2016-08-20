@@ -15,7 +15,7 @@ describe('Service: Product', () => {
     inject([ProductsService],
       (service: ProductsService) => {
         service.getAll()
-            .subscribe((data:Message) => {
+            .subscribe(data => {
                   expect(data).toEqual({
   "error": false,
   "message": [
@@ -247,7 +247,7 @@ describe('Service: Product', () => {
     inject([ProductsService],
       (service: ProductsService) => {
         service.getById(1)
-            .subscribe((data:Message) => {
+            .subscribe(data => {
                   expect(data).toEqual({
   "error": false,
   "message": [
@@ -275,7 +275,7 @@ describe('Service: Product', () => {
   it(' postProduct() method testing',
     inject([ProductsService],
       (service: ProductsService) => {
-        var product = new Product;
+        var product = new Product();
         product._id=15;
         product.name="Cocacola";
         product.price=0.9;
@@ -298,7 +298,7 @@ describe('Service: Product', () => {
   it(' putProduct() method testing',
     inject([ProductsService],
       (service: ProductsService) => {
-        var product = new Product;
+        var product = new Product();
         product._id=15;
         product.name="Cocacola";
         product.price=1.0;
@@ -321,7 +321,7 @@ describe('Service: Product', () => {
   it('deleteProduct() method testing',
     inject([ProductsService],
       (service: ProductsService) => {
-        var product = new Product;
+        var product = new Product();
         product._id=15;
         service.deleteProduct(product._id)
             .subscribe(data => {   

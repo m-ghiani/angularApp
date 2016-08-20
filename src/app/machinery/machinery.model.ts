@@ -4,6 +4,6 @@ export class Machinery {
     _id:number;
     gps:Coordinate;
     state:string;
-    id_prod:Array<number>
-    type:Array<string>
+    id_prod:Array<number>;
+    type:Array<string>;
 }

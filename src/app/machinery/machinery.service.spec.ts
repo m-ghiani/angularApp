@@ -14,7 +14,7 @@ describe('Service: Machinery', () => {
     inject([ MachineryService],
       ( service:MachineryService) => {
         service.getAll()
-            .subscribe((data:Message) => {
+            .subscribe(data => {
                   expect(data).toEqual({
   "error": false,
   "message": [
@@ -136,7 +136,7 @@ describe('Service: Machinery', () => {
     inject([ MachineryService],
       ( service:MachineryService) => {
         service.getById(1)
-            .subscribe((data:Message) => {
+            .subscribe(data => {
                   expect(data).toEqual({
   "error": false,
   "message": [
@@ -169,7 +169,7 @@ describe('Service: Machinery', () => {
   it('  postMachine() method testing',
     inject([ MachineryService],
       ( service:MachineryService) => {
-        var machine = new Machinery;
+        var machine = new Machinery();
         machine._id=11;
         machine.state="on";
         machine.id_prod=[5,6,7,8];
@@ -187,7 +187,7 @@ describe('Service: Machinery', () => {
   it('  putMachine() method testing',
     inject([ MachineryService],
       ( service:MachineryService) => {
-        var machine = new Machinery;
+        var machine = new Machinery();
         machine._id=11;
         machine.state="on";
         machine.id_prod=[5,6,7];
@@ -205,8 +205,8 @@ describe('Service: Machinery', () => {
     inject([ MachineryService],
       ( service:MachineryService) => {
         var machine = new Machinery;
-        producer._id=11;
-        service.deleteMachine(producer._id)
+        machine._id=11;
+        service.deleteMachine(machine._id)
             .subscribe(data => {   
                   expect(data).toEqual({ "error" : false, "message" :  null} || { });            
                   
