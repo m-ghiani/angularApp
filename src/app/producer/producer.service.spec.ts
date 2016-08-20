@@ -122,7 +122,7 @@ describe('Service: Producer', () => {
       })
   );
 
-  it('deleteProduct() method testing',
+  it('deleteProducer() method testing',
     inject([ ProducerService],
       ( service:ProducerService) => {
         var producer = new Producer;
