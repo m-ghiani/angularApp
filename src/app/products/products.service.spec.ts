@@ -276,13 +276,13 @@ describe('Service: Product', () => {
         service.postProduct(product)
             .subscribe((data:Message) => {
                   console.log("postProduct:" + JSON.stringify(data));
-                  expect(data.error.valueOf).toEqual(false);
+                  expect(data).toEqual({"error": false,"message": "Data added"});
             },
             err => console.log(err));
       })
   );
 
-  /*it(' putProduct() method testing',
+  it(' putProduct() method testing',
     inject([ProductsService],
       (service: ProductsService) => {
         var product = new Product();
@@ -303,7 +303,7 @@ describe('Service: Product', () => {
             },
             err => console.log(err));
       })
-  );*/
+  );
 
  /* it('deleteProduct() method testing',
     inject([ProductsService],

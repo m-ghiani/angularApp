@@ -5,7 +5,7 @@ export class Product {
     description: string;
     ingredients: string;
     category: string;
-    photo:any;
+    photo:string;
     producer:number;
     factory:number;
     family:Array<string>;
