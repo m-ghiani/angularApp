@@ -2,7 +2,7 @@ import { Coordinate } from './coordinate.model';
 
 export class Machinery {
     _id:number;
-    gps:Coordinate;
+    gps=new Coordinate();
     state:string;
     id_prod:Array<number>;
     type:Array<string>;
