@@ -26,13 +26,13 @@ export class ProductsService {
   postProduct(product:Product) : Observable<Message>{
     let products = this.http.post(`${this.productURL}`,product,{headers:this.getHeaders()})
                     .map((received:Response) => received.json());
-    return null;
+    return products;
   }
   // @method for modify one product in the databse by id
   putProduct(id:number,product:Product) : Observable<Message> {
     let products = this.http.put(`${this.productURL}/${id}`,product,{headers:this.getHeaders()})
                     .map((received_products:Response) => received_products.json());
-    return null;
+    return products;
   }
 
   // @method for deleting one product from the database by id
