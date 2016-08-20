@@ -12,7 +12,7 @@ describe('Service: Producer', () => {
   });
      it('  getAll() method testing',
     inject([ ProducerService],
-      ( sService) => {
+      ( service:ProducerService) => {
         service.getAll()
             .subscribe((data:Message) => {
                   expect(data).toEqual({
@@ -75,7 +75,7 @@ describe('Service: Producer', () => {
       }));
   it('  getById() method testing',
     inject([ ProducerService],
-      ( sService) => {
+      ( service:ProducerService) => {
         service.getById(1)
             .subscribe((data:Message) => {
                   expect(data).toEqual({
@@ -94,12 +94,12 @@ describe('Service: Producer', () => {
   );
   it('  postProduct() method testing',
     inject([ ProducerService],
-      ( sService) => {
+      ( service:ProducerService) => {
         var producer = new Producer;
         producer._id=11;
         producer.name="Coca-Cola Bevande Italia Srl";
         producer.description="Lo stabilimento di Rionero (Potenza) venne originariamente realizzato nel 1896 e poi ricostruito nel 1979. Coca-Cola HBC Italia vi opera dal 2006. Qui si imbottigliano alla fonte i marchi Lilia, Sveva in contenitori PET e vetro di vari formati.";
-        service.postProduct(producer)
+        service.postProducer(producer)
             .subscribe(data => {
                   expect(data.error).toEqual({
   "error": false,
@@ -112,12 +112,12 @@ describe('Service: Producer', () => {
 
   it('  putProduct() method testing',
     inject([ ProducerService],
-      ( sService) => {
+      ( service:ProducerService) => {
         var producer = new Producer;
         producer._id=11;
         producer.name="Coca-Cola Bevande Srl";
         producer.description="Lo stabilimento di Rionero (Potenza) venne originariamente realizzato nel 1896 e poi ricostruito nel 1979. Coca-Cola HBC Italia vi opera dal 2006. Qui si imbottigliano alla fonte i marchi Lilia, Sveva in contenitori PET e vetro di vari formati.";
-        service.putProduct(producer._id,producer)
+        service.putProducer(producer._id,producer)
             .subscribe(data => {
                   expect(data).toEqual({
   "error": false,
@@ -135,10 +135,10 @@ describe('Service: Producer', () => {
 
   it('deleteProduct() method testing',
     inject([ ProducerService],
-      ( sService) => {
-        var product = new Product;
-        product._id=15;
-        service.deleteProduct(product._id)
+      ( service:ProducerService) => {
+        var producer = new Producer;
+        producer._id=11;
+        service.deleteProducer(producer._id)
             .subscribe(data => {   
                   expect(data).toEqual({ "error" : false, "message" :  null });             
                   
