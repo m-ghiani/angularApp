@@ -276,7 +276,7 @@ describe('Service: Product', () => {
         service.postProduct(product)
             .subscribe((data:Message) => {
                   console.log("postProduct:" + JSON.stringify(data));
-                  expect(data).toEqual({"error": false,"message": "Data added"});
+                  expect(data).toBe({"error": false,"message": "Data added"});
             },
             err => console.log(err));
       })
