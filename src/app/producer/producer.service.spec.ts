@@ -101,10 +101,7 @@ describe('Service: Producer', () => {
         producer.description="Lo stabilimento di Rionero (Potenza) venne originariamente realizzato nel 1896 e poi ricostruito nel 1979. Coca-Cola HBC Italia vi opera dal 2006. Qui si imbottigliano alla fonte i marchi Lilia, Sveva in contenitori PET e vetro di vari formati.";
         service.postProducer(producer)
             .subscribe(data => {
-                  expect(data.error).toEqual({
-  "error": false,
-  "message": "Data added"
-});
+                  expect(data.error).toEqual({"error": false,"message": "Data added"});
             },
             err => console.log(err));
       })
@@ -119,15 +116,7 @@ describe('Service: Producer', () => {
         producer.description="Lo stabilimento di Rionero (Potenza) venne originariamente realizzato nel 1896 e poi ricostruito nel 1979. Coca-Cola HBC Italia vi opera dal 2006. Qui si imbottigliano alla fonte i marchi Lilia, Sveva in contenitori PET e vetro di vari formati.";
         service.putProducer(producer._id,producer)
             .subscribe(data => {
-                  expect(data).toEqual({
-  "error": false,
-  "message": {
-    "_id": 11,
-    "description": "Lo stabilimento di Rionero (Potenza) venne originariamente realizzato nel 1896 e poi ricostruito nel 1979. Coca-Cola HBC Italia vi opera dal 2006. Qui si imbottigliano alla fonte i marchi Lilia, Sveva in contenitori PET e vetro di vari formati.",
-    "name": "Coca-Cola Bevande Srl",
-    "__v": 0
-  }
-});
+                  expect(data).toEqual({"error": false,"message": "Data Modified"});
             },
             err => console.log(err));
       })
