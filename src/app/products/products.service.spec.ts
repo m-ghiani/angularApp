@@ -288,7 +288,7 @@ describe('Service: Product', () => {
         product.family=["normale"];
         service.postProduct(product)
             .subscribe(data => {
-                  expect(data.error).toEqual({
+                  expect(data).toEqual({
   "error": false,
   "message": "Data added"
 });
@@ -313,7 +313,7 @@ describe('Service: Product', () => {
         product.family=["normale"];
         service.putProduct(product._id,product)
             .subscribe(data => {
-                  expect(data.error).toEqual({
+                  expect(data).toEqual({
       "_id": 15,
       "name": "Cocacola",
       "price": 1.0,
