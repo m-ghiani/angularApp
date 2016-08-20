@@ -27,9 +27,8 @@ describe('Service: Product', () => {
       "ingredients": "acqua, zucchero, anidride carbonica, colorante,E 150 d, acidificante acido fosforico, aromi naturali (inclusa caffeina)",
       "category": "bevande fredde",
       "photo": null,
-      "producer": "1",
-      "factory": "1",
-      "machines": [],
+      "producer": 1,
+      "factory": 1,
       "family": [
         "normale"
       ]
@@ -42,9 +41,8 @@ describe('Service: Product', () => {
       "ingredients": "acqua, zucchero, anidride carbonica, acidificante acido citrico, aromi, correttore di acidità citrato trisodico",
       "category": "bevande fredde",
       "photo": null,
-      "producer": "1",
-      "factory": "1",
-      "machines": [],
+      "producer": 1,
+      "factory": 1,
       "family": [
         "normale"
       ]
@@ -57,9 +55,8 @@ describe('Service: Product', () => {
       "ingredients": null,
       "category": "bevande fredde",
       "photo": null,
-      "producer": "2",
-      "factory": "2",
-      "machines": [],
+      "producer": 2,
+      "factory": 2,
       "family": [
         "normale"
       ]
@@ -72,26 +69,25 @@ describe('Service: Product', () => {
       "ingredients": "infuso di thè(acqua, thè), zucchero, destrosio, succo di limone in polvere reidratato(0,2%), esaltatore di sapidità(acido ascorbico), aromi",
       "category": "bevande fredde",
       "photo": null,
-      "producer": "3",
-      "factory": "3",
-      "machines": [],
+      "producer": 3,
+      "factory": 3,
       "family": [
         "normale"
       ]
     },
     {
       "_id": 5,
-      "name": "Sprite sca",
-      "price": 0.99,
-      "description": "descrizione",
-      "ingredients": "Ingredienti del prodotto",
-      "category": "Categoria",
-      "photo": "ciao",
-      "producer": "1",
-      "factory": "1",
-      "machines": [],
+      "name": "caffè",
+      "price": 0.4,
+      "description": "70% di caffè qualità Arabica con un valore percentuale della caffeina non superiore al 1.8% e con una grammatura minima per erogazione pari a 7 gr.",
+      "ingredients": "caffè arabica, acqua, zucchero ",
+      "category": "bevande calde",
+      "photo": null,
+      "producer": 4,
+      "factory": 4,
       "family": [
-        "normale"
+        "normale",
+        "prodotti locali"
       ]
     },
     {
@@ -102,9 +98,8 @@ describe('Service: Product', () => {
       "ingredients": "latte in polvere, caffè, zucchero",
       "category": "bevande calde",
       "photo": null,
-      "producer": "4",
-      "factory": "4",
-      "machines": [],
+      "producer": 4,
+      "factory": 4,
       "family": [
         "normale",
         "prodotti locali"
@@ -118,9 +113,8 @@ describe('Service: Product', () => {
       "ingredients": "latte in polvere, caffè, zucchero",
       "category": "bevande calde",
       "photo": null,
-      "producer": "4",
-      "factory": "4",
-      "machines": [],
+      "producer": 4,
+      "factory": 4,
       "family": [
         "normale",
         "prodotti locali"
@@ -134,9 +128,8 @@ describe('Service: Product', () => {
       "ingredients": "zucchero, acqua, acidificante: acido citrico, estratto di thè (1,5%), succo di limone (0,4), aromi",
       "category": "bevande calde",
       "photo": null,
-      "producer": "5",
-      "factory": "5",
-      "machines": [],
+      "producer": 5,
+      "factory": 5,
       "family": [
         "normale"
       ]
@@ -149,9 +142,8 @@ describe('Service: Product', () => {
       "ingredients": "farina di frumento, zucchero,oli vegetali (palma, palmisto), cacao magro in polvere 4,6%, amido di frumento, sciroppo di glucosio-fruttosio, agenti lievitanti (carbonati di potassio, carbonati di ammonio, carbonati di sodio), sale, emulsionanti (lecitine di soia, lecitine di girasole), aroma (vanillina).",
       "category": "merendine dolci",
       "photo": null,
-      "producer": "6",
-      "factory": "6",
-      "machines": [],
+      "producer": 6,
+      "factory": 6,
       "family": [
         "normale"
       ]
@@ -164,9 +156,8 @@ describe('Service: Product', () => {
       "ingredients": "Cereali 52,9% (farina di frumento 41,6%, cereali integrali 9,3% (fiocchi integrali di avena 5,2%, farina integrale di orzo 1,9%, farina integrale di segale 1%, farina integrale di farro 1%, chicchi integrali frantumati di grano saraceno 0,2%), crusca e germe di frumento 2%), zucchero, oli vegetali (colza, palma, cocco, palmisto), amido di frumento, yogurt magro in polvere 3% (equivalente a 20% di yogurt), cacao magro in polvere 1.9%, minerali (carbonato di calcio, carbonato di magnesio, ferro elementare), agenti lievitanti (carbonati di sodio, difosfati, carbonati di ammonio), aromi, amulsionanti (lecitine di soia, E472e), sale, correttore di acidità (acido citrico), vitamine (vitamina E, vitamina B1 (tiamina))",
       "category": "merendine dolci",
       "photo": null,
-      "producer": "7",
-      "factory": "7",
-      "machines": [],
+      "producer": 7,
+      "factory": 7,
       "family": [
         "normale",
         "basso contenuto calorico",
@@ -181,9 +172,8 @@ describe('Service: Product', () => {
       "ingredients": "Zucchero, cocco essiccato (20.5%), olio di palma, farina di frumento, latte scremato in polvere, siero di latte in polvere, amido di frumento, estratto di cocco in polvere (0.5%), olio di girasole, aromi, emulsionanti",
       "category": "merendine dolci",
       "photo": null,
-      "producer": "3",
-      "factory": "3",
-      "machines": [],
+      "producer": 3,
+      "factory": 3,
       "family": [
         "normale",
         "basso contenuto calorico"
@@ -197,9 +187,8 @@ describe('Service: Product', () => {
       "ingredients": "Farina di grano tenero tipo 0, grasso vegetale (palma), crema di lievito, sale iodato (sale, iodato di potassio 0.007%) 2.6%, olio extra vergine d'oliva 1.4%, farina di frumento maltato, glutine, estratto di malto d'orzo, aromi naturali",
       "category": "merendine salate",
       "photo": null,
-      "producer": "8",
-      "factory": "8",
-      "machines": [],
+      "producer": 8,
+      "factory": 8,
       "family": [
         "normale",
         "basso contenuto calorico"
@@ -213,9 +202,8 @@ describe('Service: Product', () => {
       "ingredients": "farina di riso(98,7%), sale marino",
       "category": "merendine salate",
       "photo": null,
-      "producer": "9",
-      "factory": "9",
-      "machines": [],
+      "producer": 9,
+      "factory": 9,
       "family": [
         "normale",
         "basso contenuto calorico",
@@ -230,9 +218,8 @@ describe('Service: Product', () => {
       "ingredients": "patate, olio di semi di girasole, sale iodato",
       "category": "merendine salate",
       "photo": null,
-      "producer": "10",
-      "factory": "10",
-      "machines": [],
+      "producer": 10,
+      "factory": 10,
       "family": [
         "normale",
         "senza glutine"
