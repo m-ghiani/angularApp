@@ -299,23 +299,23 @@ describe('Service: Product', () => {
         service.putProduct(product._id,product)
             .subscribe((data:Message) => {
                   console.log("putProduct:" + JSON.stringify(data));
-                  expect(JSON.stringify(data)).toEqual(JSON.stringify({"error": false,"message": "Data Modified"}));
+                  expect(data).toEqual({"error": false,"message": "Data Modified"});
             },
             err => console.log(err));
       })
   );
 
- /* it('deleteProduct() method testing',
+ it('deleteProduct() method testing',
     inject([ProductsService],
       (service: ProductsService) => {
         var product = new Product();
         product._id=15;
         service.deleteProduct(product._id)
             .subscribe((data:Message) => {   
-                  expect(data.error.valueOf()).toEqual(false);             
+                  expect(data.error).toEqual(false);             
                   
             },
             err => console.log(err));
       })
-  );*/
+  );
 });
