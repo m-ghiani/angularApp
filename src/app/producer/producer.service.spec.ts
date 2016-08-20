@@ -129,7 +129,7 @@ describe('Service: Producer', () => {
         producer._id=11;
         service.deleteProducer(producer._id)
             .subscribe(data => {   
-                  expect(data).toEqual({ "error" : false, "message" :  null });             
+                  expect(data).toEqual({ "error" : false, "message" :  null} || { });            
                   
             },
             err => console.log(err));
