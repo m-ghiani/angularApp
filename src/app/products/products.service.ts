@@ -24,15 +24,15 @@ export class ProductsService {
   }
   // @method for adding one product in the databse by id
   postProduct(product:Product) : Observable<Message>{
-    let products = this.http.post(`${this.productURL}`,JSON.parse(JSON.stringify(product)),{headers:this.getHeaders()})
+    let products = this.http.post(`${this.productURL}`,product,{headers:this.getHeaders()})
                     .map((received:Response) => received.json());
-    return products;
+    return null;
   }
   // @method for modify one product in the databse by id
   putProduct(id:number,product:Product) : Observable<Message> {
-    let products = this.http.put(`${this.productURL}/${id}`,JSON.parse(JSON.stringify(product)),{headers:this.getHeaders()})
+    let products = this.http.put(`${this.productURL}/${id}`,product,{headers:this.getHeaders()})
                     .map((received_products:Response) => received_products.json());
-    return products;
+    return null;
   }
 
   // @method for deleting one product from the database by id

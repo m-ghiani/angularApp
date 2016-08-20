@@ -305,7 +305,7 @@ describe('Service: Product', () => {
       })
   );
 
- it('deleteProduct() method testing',
+ /*it('deleteProduct() method testing',
     inject([ProductsService],
       (service: ProductsService) => {
         var product = new Product();
@@ -317,5 +317,5 @@ describe('Service: Product', () => {
             },
             err => console.log(err));
       })
-  );
+  );*/
 });

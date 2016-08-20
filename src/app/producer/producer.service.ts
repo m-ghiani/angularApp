@@ -24,13 +24,13 @@ export class ProducerService {
   }
   // @method for adding one Producer in the databse by id
   postProducer(producer:Producer) : Observable<Message>{
-    let producers = this.http.post(`${this.producerURL}`,JSON.parse(JSON.stringify(producer)),{headers:this.getHeaders()})
+    let producers = this.http.post(`${this.producerURL}`,producer,{headers:this.getHeaders()})
                     .map((received_producers:Response) => received_producers.json());
     return producers;
   }
   // @method for modify one Producer in the databse by id
   putProducer(id:number,producer:Producer) : Observable<Message> {
-    let producers = this.http.put(`${this.producerURL}/${id}`,JSON.parse(JSON.stringify(producer)),{headers:this.getHeaders()})
+    let producers = this.http.put(`${this.producerURL}/${id}`,producer,{headers:this.getHeaders()})
                     .map((received_producers:Response) => received_producers.json());
     return producers;
   }

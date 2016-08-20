@@ -24,13 +24,13 @@ export class MachineryService {
   }
   // @method for adding one machine in the databse by id
   postMachine(machine:Machinery) : Observable<Message>{
-    let machines = this.http.post(`${this.machineURL}`,JSON.parse(JSON.stringify(machine)),{headers:this.getHeaders()})
+    let machines = this.http.post(`${this.machineURL}`,machine,{headers:this.getHeaders()})
                     .map((received_machines:Response) => received_machines.json());
     return machines;
   }
   // @method for modify one machine in the databse by id
   putMachine(id:number,machine:Machinery) : Observable<Message> {
-    let machines = this.http.put(`${this.machineURL}/${id}`,JSON.parse(JSON.stringify(machine)),{headers:this.getHeaders()})
+    let machines = this.http.put(`${this.machineURL}/${id}`,machine,{headers:this.getHeaders()})
                     .map((received_machines:Response) => received_machines.json());
     return machines;
   }
