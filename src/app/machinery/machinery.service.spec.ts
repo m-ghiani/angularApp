@@ -189,7 +189,7 @@ describe('Service: Machinery', () => {
       ( service:MachineryService) => {
         var machine = new Machinery();
         machine._id=11;
-        machine.state="on";
+        machine.state="off";
         machine.id_prod=[5,6,7];
         machine.gps.type="Point";
         machine.gps.coordinates=[40.335319,18.114937];
@@ -204,7 +204,7 @@ describe('Service: Machinery', () => {
   it('deleteMachine() method testing',
     inject([ MachineryService],
       ( service:MachineryService) => {
-        var machine = new Machinery;
+        var machine = new Machinery();
         machine._id=11;
         service.deleteMachine(machine._id)
             .subscribe(data => {   

@@ -95,7 +95,7 @@ describe('Service: Producer', () => {
   it('  postProducer() method testing',
     inject([ ProducerService],
       ( service:ProducerService) => {
-        var producer = new Producer;
+        var producer = new Producer();
         producer._id=11;
         producer.name="Coca-Cola Bevande Italia Srl";
         producer.description="Lo stabilimento di Rionero (Potenza) venne originariamente realizzato nel 1896 e poi ricostruito nel 1979. Coca-Cola HBC Italia vi opera dal 2006. Qui si imbottigliano alla fonte i marchi Lilia, Sveva in contenitori PET e vetro di vari formati.";
@@ -110,7 +110,7 @@ describe('Service: Producer', () => {
   it('  putProducer() method testing',
     inject([ ProducerService],
       ( service:ProducerService) => {
-        var producer = new Producer;
+        var producer = new Producer();
         producer._id=11;
         producer.name="Coca-Cola Bevande Srl";
         producer.description="Lo stabilimento di Rionero (Potenza) venne originariamente realizzato nel 1896 e poi ricostruito nel 1979. Coca-Cola HBC Italia vi opera dal 2006. Qui si imbottigliano alla fonte i marchi Lilia, Sveva in contenitori PET e vetro di vari formati.";
@@ -125,7 +125,7 @@ describe('Service: Producer', () => {
   it('deleteProducer() method testing',
     inject([ ProducerService],
       ( service:ProducerService) => {
-        var producer = new Producer;
+        var producer = new Producer();
         producer._id=11;
         service.deleteProducer(producer._id)
             .subscribe(data => {   
