@@ -332,14 +332,19 @@ describe('Service: Product', () => {
       })
   );
 
-  it('Service: Product deleteProduct() method testing',
+  it('deleteProduct() method testing',
     inject([ProductsService],
       (service: ProductsService) => {
         var product = new Product;
         product._id=15;
         service.deleteProduct(product._id)
             .subscribe(data => {                
-                  expect(data).toEqual({});
+                  service.getById(product._id).subscribe(data => {
+                    expect(data).toEqual({
+  "error": false,
+  "message": []
+})
+                  })
             },
             err => console.log(err));
       })
