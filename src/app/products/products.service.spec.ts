@@ -288,6 +288,7 @@ describe('Service: Product', () => {
         product.family=["normale"];
         service.postProduct(product)
             .subscribe(data => {
+                  console.log("postProduct:" + JSON.stringify(data));
                   expect(data).toEqual({"error": false,"message": "Data added"});
             },
             err => console.log(err));
@@ -310,6 +311,7 @@ describe('Service: Product', () => {
         product.family=["normale"];
         service.putProduct(product._id,product)
             .subscribe(data => {
+                  console.log("postProduct:" + JSON.stringify(data));
                   expect(data).toEqual({"error": false,"message": "Data Modified"});
             },
             err => console.log(err));
