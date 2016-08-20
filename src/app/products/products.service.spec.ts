@@ -245,7 +245,7 @@ describe('Service: Product', () => {
       "description": "Formato di vendita: 330 ml, Porzione: 200 g, Zuccheri: 21.2 g Grassi: 0 g, Sale: 0 g",
       "ingredients": "acqua, zucchero, anidride carbonica, colorante,E 150 d, acidificante acido fosforico, aromi naturali (inclusa caffeina)",
       "category": "bevande fredde",
-      "photo": null,
+      "photo": "null",
       "producer": "1",
       "factory": "1",
       "machines": [],
@@ -292,7 +292,7 @@ describe('Service: Product', () => {
         product.description="Formato di vendita: 330 ml, Porzione: 200 g, Zuccheri: 21.2 g Grassi: 0 g, Sale: 0 g";
         product.ingredients="acqua, zucchero, anidride carbonica, colorante,E 150 d, acidificante acido fosforico, aromi naturali (inclusa caffeina)";
         product.category="bevande fredde";
-        product.photo=null;
+        product.photo="null";
         product.producer=1;
         product.factory=1;
         product.family=["normale"];
