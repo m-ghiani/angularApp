@@ -282,14 +282,14 @@ describe('Service: Product', () => {
         product.description="Formato di vendita: 330 ml, Porzione: 200 g, Zuccheri: 21.2 g Grassi: 0 g, Sale: 0 g";
         product.ingredients="acqua, zucchero, anidride carbonica, colorante,E 150 d, acidificante acido fosforico, aromi naturali (inclusa caffeina)";
         product.category="bevande fredde";
-        product.photo=null;
+        product.photo="null";
         product.producer=1;
         product.factory=1;
         product.family=["normale"];
         service.postProduct(product)
             .subscribe(data => {
                   console.log("postProduct:" + JSON.stringify(data));
-                  expect(data).toEqual({"error": false,"message": "Data added"});
+                  expect(data.error).toEqual({"error": false,"message": "Data added"});
             },
             err => console.log(err));
       })
