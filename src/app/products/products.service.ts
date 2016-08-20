@@ -24,8 +24,10 @@ export class ProductsService {
   }
   // @method for adding one product in the databse by id
   postProduct(product:Product) : Observable<Message>{
-    let products = this.http.post(`${this.productURL}`,product,{headers:this.getHeaders()})
-                    .map((received:Response) => received.json());
+    
+    let products = this.http.post(this.productURL, product, {headers: this.getHeaders()})
+    .map(res => res.json());
+
     return products;
   }
   // @method for modify one product in the databse by id

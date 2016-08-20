@@ -274,12 +274,14 @@ describe('Service: Product', () => {
         product.factory=1;
         product.family=["normale"];
         service.postProduct(product)
-            .subscribe((data:Message) => {
-                  console.log("postProduct:" + JSON.stringify(data));
-                  expect(data).toBe({"error": false,"message": "Data added"});
-            },
-            err => console.log(err));
-      })
+            .subscribe(data => {
+                  console.log("putProduct:" + JSON.stringify(data));
+                  expect(data).toEqual({"error": false,"message": "Data Modified"});
+            } ,
+      err => this.logError(err),
+      () => console.log('Complete')
+    );
+      })         
   );
 
   it(' putProduct() method testing',
@@ -296,16 +298,17 @@ describe('Service: Product', () => {
         product.producer=1;
         product.factory=1;
         product.family=["normale"];
-        service.putProduct(product._id,product)
-            .subscribe((data:Message) => {
+        service.putProduct(product._id,product).subscribe(data => {
                   console.log("putProduct:" + JSON.stringify(data));
                   expect(data).toEqual({"error": false,"message": "Data Modified"});
-            },
-            err => console.log(err));
-      })
+            } ,
+      err => this.logError(err),
+      () => console.log('Complete')
+    );
+      })         
   );
 
- /*it('deleteProduct() method testing',
+ it('deleteProduct() method testing',
     inject([ProductsService],
       (service: ProductsService) => {
         var product = new Product();
@@ -317,5 +320,5 @@ describe('Service: Product', () => {
             },
             err => console.log(err));
       })
-  );*/
+  );
 });
