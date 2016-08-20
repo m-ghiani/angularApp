@@ -14,7 +14,7 @@ describe('Service: Producer', () => {
     inject([ ProducerService],
       ( service:ProducerService) => {
         service.getAll()
-            .subscribe((data:Message) => {
+            .subscribe(data => {
                   expect(data).toEqual({
   "error": false,
   "message": [
@@ -77,7 +77,7 @@ describe('Service: Producer', () => {
     inject([ ProducerService],
       ( service:ProducerService) => {
         service.getById(1)
-            .subscribe((data:Message) => {
+            .subscribe(data => {
                   expect(data).toEqual({
   "error": false,
   "message": [
@@ -92,7 +92,7 @@ describe('Service: Producer', () => {
             err => console.log(err));
       })
   );
-  it('  postProduct() method testing',
+  it('  postProducer() method testing',
     inject([ ProducerService],
       ( service:ProducerService) => {
         var producer = new Producer;
@@ -101,13 +101,13 @@ describe('Service: Producer', () => {
         producer.description="Lo stabilimento di Rionero (Potenza) venne originariamente realizzato nel 1896 e poi ricostruito nel 1979. Coca-Cola HBC Italia vi opera dal 2006. Qui si imbottigliano alla fonte i marchi Lilia, Sveva in contenitori PET e vetro di vari formati.";
         service.postProducer(producer)
             .subscribe(data => {
-                  expect(data.error).toEqual({"error": false,"message": "Data added"});
+                  expect(data).toEqual({"error": false,"message": "Data added"});
             },
             err => console.log(err));
       })
   );
 
-  it('  putProduct() method testing',
+  it('  putProducer() method testing',
     inject([ ProducerService],
       ( service:ProducerService) => {
         var producer = new Producer;
