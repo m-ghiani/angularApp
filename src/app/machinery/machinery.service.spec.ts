@@ -15,6 +15,7 @@ describe('Service: Machinery', () => {
       ( service:MachineryService) => {
         service.getAll()
             .subscribe(data => {
+                  console.log("getAllMachines result:" + data);
                   expect(data).toEqual({
   "error": false,
   "message": [
