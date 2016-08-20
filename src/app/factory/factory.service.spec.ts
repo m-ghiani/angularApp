@@ -20,9 +20,21 @@ describe('Service: Factory', () => {
   "error": false,
   "message": [
     {
+      "_id": 1,
+      "address": "Contrada La Francesca, 85028 Rionero In Vulture (PZ)",
+      "id_producer": 1,
+      "gps": {
+        "coordinates": [
+          40.893138,
+          15.669653
+        ],
+        "type": "Point"
+      }
+    },
+    {
       "_id": 2,
       "address": "Via Nazionale, 2, Valdisotto (SO)",
-      "id_producer": "2",
+      "id_producer": 2,
       "gps": {
         "coordinates": [
           46.423546,
@@ -34,7 +46,7 @@ describe('Service: Factory', () => {
     {
       "_id": 3,
       "address": "Via Maria Cristina, 47, 10025 Pino Torinese (TO)",
-      "id_producer": "3",
+      "id_producer": 3,
       "gps": {
         "coordinates": [
           45.049677,
@@ -46,7 +58,7 @@ describe('Service: Factory', () => {
     {
       "_id": 4,
       "address": "Strada Statale N. 16, 73100 Lecce (LE)",
-      "id_producer": "4",
+      "id_producer": 4,
       "gps": {
         "coordinates": [
           40.366109,
@@ -58,7 +70,7 @@ describe('Service: Factory', () => {
     {
       "_id": 5,
       "address": "Via C. Imbonati, 18 - 20159 Milano (MI)",
-      "id_producer": "5",
+      "id_producer": 5,
       "gps": {
         "coordinates": [
           45.500495,
@@ -70,7 +82,7 @@ describe('Service: Factory', () => {
     {
       "_id": 6,
       "address": "3 Parkway N, Deerfield, IL 60015, Stati Uniti",
-      "id_producer": "6",
+      "id_producer": 6,
       "gps": {
         "coordinates": [
           42.163563,
@@ -82,7 +94,7 @@ describe('Service: Factory', () => {
     {
       "_id": 7,
       "address": "Via Farini, 41 - 20159 Milano (MI)",
-      "id_producer": "7",
+      "id_producer": 7,
       "gps": {
         "coordinates": [
           45.49036,
@@ -94,7 +106,7 @@ describe('Service: Factory', () => {
     {
       "_id": 8,
       "address": "Via Pacinotti, 4 - 42049 S.Ilario d'Enza (RE)",
-      "id_producer": "8",
+      "id_producer": 8,
       "gps": {
         "coordinates": [
           44.752589,
@@ -106,7 +118,7 @@ describe('Service: Factory', () => {
     {
       "_id": 9,
       "address": "Via Angelo Scotti, 2 - 27100 Pavia (PV)",
-      "id_producer": "9",
+      "id_producer": 9,
       "gps": {
         "coordinates": [
           45.186944,
@@ -118,7 +130,7 @@ describe('Service: Factory', () => {
     {
       "_id": 10,
       "address": "SS Pontina Km 27,650, 00040 - Pomezia (RM)",
-      "id_producer": "10",
+      "id_producer": 10,
       "gps": {
         "coordinates": [
           41.689744,
@@ -150,7 +162,7 @@ describe('Service: Factory', () => {
       })
   );
 
-  it('  putMachine() method testing',
+  it('  putFactory() method testing',
     inject([ FactoryService],
       ( service:FactoryService) => {
         var factory = new Factory();
@@ -174,7 +186,7 @@ describe('Service: Factory', () => {
         machine._id=11;
         service.deleteFactory(machine._id)
             .subscribe(data => {   
-                  expect(data).toEqual({ "error" : false, "message" :  null} || { });            
+                  expect(data).toEqual({ });            
                   
             },
             err => console.log(err));

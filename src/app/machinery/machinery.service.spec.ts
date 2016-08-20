@@ -209,7 +209,7 @@ describe('Service: Machinery', () => {
         machine._id=11;
         service.deleteMachine(machine._id)
             .subscribe(data => {   
-                  expect(data).toEqual({ "error" : false, "message" :  null} || { });            
+                  expect(data).toEqual({ });            
                   
             },
             err => console.log(err));
