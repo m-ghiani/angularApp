@@ -15,7 +15,6 @@ describe('Service: User', () => {
       (service: UserService) => {
         service.getAll()
             .subscribe(data => {
-                  console.log("Service: User getAll() method testing result: " + data.error);
                   expect(data).toEqual({
   "error": false,
   "message": [
@@ -65,7 +64,6 @@ describe('Service: User', () => {
       (service: UserService) => {
         service.getByEmail("marco.mameli@gmail.com")
             .subscribe((data:Message) => {
-                  console.log("Service: User getByEmail() method testing result: " + data.error);
                   expect(data).toEqual({
   "error": false,
   "message": [
