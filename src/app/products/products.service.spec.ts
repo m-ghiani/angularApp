@@ -288,10 +288,7 @@ describe('Service: Product', () => {
         product.family=["normale"];
         service.postProduct(product)
             .subscribe(data => {
-                  expect(data).toEqual({
-  "error": false,
-  "message": "Data added"
-});
+                  expect(data).toEqual({"error": false,"message": "Data added"});
             },
             err => console.log(err));
       })
@@ -313,20 +310,7 @@ describe('Service: Product', () => {
         product.family=["normale"];
         service.putProduct(product._id,product)
             .subscribe(data => {
-                  expect(data).toEqual({
-      "_id": 15,
-      "name": "Cocacola",
-      "price": 1.0,
-      "description": "Formato di vendita: 330 ml, Porzione: 200 g, Zuccheri: 21.2 g Grassi: 0 g, Sale: 0 g",
-      "ingredients": "acqua, zucchero, anidride carbonica, colorante,E 150 d, acidificante acido fosforico, aromi naturali (inclusa caffeina)",
-      "category": "bevande fredde",
-      "photo": null,
-      "producer": 1,
-      "factory": 1,
-      "family": [
-        "normale"
-      ]
-    });
+                  expect(data).toEqual({"error": false,"message": "Data Modified"});
             },
             err => console.log(err));
       })
