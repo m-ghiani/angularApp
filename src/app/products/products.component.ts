@@ -16,6 +16,7 @@ export class ProductsComponent implements OnInit {
   public uploader:FileUploader = new FileUploader({url: "http://seserver.noip.me:8080/rest/images/"});
   public hasBaseDropZoneOver:boolean = false;
   public hasAnotherDropZoneOver:boolean = false;
+  id_product : number; // questo sarà sia il nome del file immagine che l'id del prodotto
   image : string;
   constructor(private productservice : ProductsService) { }
 
