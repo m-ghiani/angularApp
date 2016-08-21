@@ -20,10 +20,15 @@ export class ProductsComponent implements OnInit {
   // visualizzazione immagine
    this.image = this.productservice.getResourceImage("undefined-1471755398382.jpeg");
    this.id_product = 1;
-   this.onsubmit();
+   // modificata da massimo 
+   //this.onsubmit();
+   // fine modifica
   }
   onsubmit(){
+    
     console.log("Effettuo il submit");
+    // modificata da massimo
+    this.submitted = true;
   }
 }
 
