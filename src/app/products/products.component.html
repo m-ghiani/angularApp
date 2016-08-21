@@ -6,6 +6,6 @@
   <form method="post" enctype="multipart/form-data" action="http://seserver.noip.me:8080/rest/images">
             <input type="hidden" name="nomeFile" value="{{id_product}}"/>  <!-- id_product sarà il nome del file -->
             <input type="file" name="myimage"/>
-            <input type="submit" name="submit" value="submit">
+            <input type="submit" name="submit" value="submit" (onsubmit)="onsubmit()">
         </form>
   <img src="{{image}}"/>
