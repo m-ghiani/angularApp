@@ -8,6 +8,8 @@ export class ProductsService {
 
   // URL where is the REST api for product 
   private productURL : string = "http://seserver.noip.me:8080/rest/products";
+  private imageURL : string = "http://seserver.noip.me:8080/rest/images/";
+  image:any;
   constructor(private http : Http) { }
 
   // @method for receiving all products in the database
@@ -42,6 +44,17 @@ export class ProductsService {
     let products = this.http.delete(`${this.productURL}/${id}`,{headers:this.getHeaders()})
                     .map((received_products:Response) => received_products.json());
     return products;
+  }
+
+  getImage(name:string){
+    return this.http.get(this.imageURL+name,{headers : this.getHeaders()})
+        .map((res) => {
+          new Blob([res],{type:'image/jpg'});
+        });
+  }
+
+  getResourceImage(name:string){
+    return this.imageURL+name;
   }
 
   // @method to create headers for this http service
